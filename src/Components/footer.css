@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Roboto+Condensed:wght@300;400&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins' ,sans-serif;
+}
+
+.footer{
+  display: flex;
+  background-color: rgb(46, 46, 46);
+  margin-top: 30px;
+  color: white;
+  gap: 80px;
+  height: 300px;
+  font-weight: lighter;
+  font-size: 15px;
+}
+
+.company{
+  width: 400px;
+  height: 100px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px dashed lightgray;
+  margin-left: 40px;
+}
+
+.company h5{
+  padding-top: 40px;
+}
+
+.sections{
+  width: 100px;
+  padding: 40px;
+}
+
+.sections ul li{
+  list-style-type: none;
+  border-bottom: 1px dashed lightgray;
+  padding: 5px;
+
+}
+
+.sections ul li:hover{
+  cursor: pointer;
+  color: #162D6Fff;
+}
+
+.contact{
+  width: 200px;
+  padding: 40px;
+}
+
+.contact:hover{
+  cursor: pointer;
+}
+.phone{
+  padding-bottom: 20px;
+  border-bottom: 1px dashed lightgray;
+}
+
+.email{
+  padding-top: 20px;
+  border-bottom: 1px dashed lightgray;
+  padding-bottom: 20px;
+}
+
