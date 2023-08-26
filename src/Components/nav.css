@@ -14,6 +14,7 @@
   margin-top: 10px;
   gap: 400px;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16);
+  justify-content: space-between;
 }
 
 .logo img{
@@ -26,9 +27,10 @@
 .nav-list ul{
   display: flex;
   gap: 40px;
-  margin-top: 10px;
+  margin-top: 15px;
   align-items: center;
   justify-content: center;
+  padding-right: 30px;
 }
 
 .nav-list li{
@@ -39,14 +41,39 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 10px;
   font-weight: bold;
 }
 
-.nav-list li:hover{
+.nav-list .link{
+  text-decoration: none;
+  color: black;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+
+.nav-list .link:hover{
   background-color: #162D6Fff;
   color: white;
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 10px;
   transition: 0.3s ease-in;
 }
+
+.nav-list button {
+  width: 100px;
+  height: 50px;
+  font-size: 20px;
+  background-color:#162D6Fff;
+  border: none;
+  border-radius: 10px;
+}
+
+.nav-list .btn{
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff;
+}
+
