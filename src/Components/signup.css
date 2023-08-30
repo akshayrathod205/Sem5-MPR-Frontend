@@ -27,6 +27,25 @@
 	transition: all 0.6s ease-in-out;
 }
 
+.flex-container{
+	display: flex;
+	width: 100%;
+}
+
+.side1{
+	height: 400px;
+	margin-left: -40px;
+	margin-top: 30px;
+	width: 130%;
+}
+
+.side2{
+	height: 400px;
+	margin-top: 30px;
+	width: 140%;
+}
+
+
 .sign-in-container {
 	left: 0;
 	width: 50%;
@@ -39,13 +58,13 @@
 
 .sign-up-container {
 	left: 0;
-	width: 50%;
+	width: 100%;
 	opacity: 0;
 	z-index: 1;
 }
 
 .container.right-panel-active .sign-up-container {
-	transform: translateX(100%);
+	transform: translateX(4%);
 	opacity: 1;
 	z-index: 5;
 	animation: show 0.6s;
@@ -78,7 +97,7 @@
 }
 
 .container.right-panel-active .overlay-container {
-	transform: translateX(-100%);
+	transform: translateX(-263%);
 }
 
 .overlay {
@@ -168,6 +187,21 @@
 	margin: 15px 0;
 }
 
+.sign-button{
+	border-radius: 20px;
+	border: 1px solid #03045e;
+	background-color: #03045e;
+	color: #FFFFFF;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+	margin-top: 20px;
+
+}
+
 .button {
 	border-radius: 20px;
 	border: 1px solid #03045e;
@@ -230,6 +264,7 @@ form {
 	margin: 5px 0;
 	width: 70%;
 	font-size: 20px;
+	margin-top: 13px;
 }
 
 .overlay-right .h1 {
@@ -261,9 +296,9 @@ form {
 
 
 /* New CSS  added by Divya*/
-.inputfield {
+/* .inputfield {
 	display: inline-block;
-}
+} */
 
 .inputfield .input-new {
 	background-color: #eee;
@@ -277,11 +312,16 @@ form {
 
 .type-box {
 	background-color: #eee;
-	border: none;
-	padding: 1px 20px;
-	margin-right: 5px;
-	width: 37%;
-	font-size: 20px;
+    border: none;
+    padding: 1px 20px;
+    margin-right: -4px;
+    width: 81%;
+    font-size: 20px;
+    margin-top: 13px;
+}
+
+.company-details{
+	margin-top: 13px;
 }
 
 .company-details .input-company {
