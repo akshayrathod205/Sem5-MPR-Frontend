@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Roboto+Condensed:wght@300;400&display=swap');
 
 
-*{
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins' ,sans-serif;
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', sans-serif;
 }
 
 .container {
 	background-color: #fff;
 	border-radius: 10px;
-  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 	top: 7vh;
 	left: 20vh;
 	position: relative;
@@ -52,12 +52,15 @@
 }
 
 @keyframes show {
-	0%, 49.99% {
+
+	0%,
+	49.99% {
 		opacity: 0;
 		z-index: 1;
 	}
-	
-	50%, 100% {
+
+	50%,
+	100% {
 		opacity: 1;
 		z-index: 5;
 	}
@@ -74,7 +77,7 @@
 	z-index: 100;
 }
 
-.container.right-panel-active .overlay-container{
+.container.right-panel-active .overlay-container {
 	transform: translateX(-100%);
 }
 
@@ -89,12 +92,12 @@
 	left: -100%;
 	height: 100%;
 	width: 200%;
-  	transform: translateX(0);
+	transform: translateX(0);
 	transition: transform 0.6s ease-in-out;
 }
 
 .container.right-panel-active .overlay {
-  	transform: translateX(50%);
+	transform: translateX(50%);
 }
 
 .overlay-panel {
@@ -132,6 +135,7 @@
 .social-container {
 	margin: 20px 0;
 }
+
 .social-container a {
 	border: 1px solid #DDDDDD;
 	border-radius: 50%;
@@ -190,8 +194,8 @@
 	border-color: #FFFFFF;
 }
 
-.ghost{
-  border-radius: 20px;
+.ghost {
+	border-radius: 20px;
 	border: 1px solid #03045e;
 	background-color: #03045e;
 	color: #FFFFFF;
@@ -201,11 +205,11 @@
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	transition: transform 80ms ease-in;
-  margin-left: 40px;
+	margin-left: 40px;
 }
 
-.ghost:hover{
-  cursor: pointer;
+.ghost:hover {
+	cursor: pointer;
 }
 
 form {
@@ -222,35 +226,70 @@ form {
 .input {
 	background-color: #eee;
 	border: none;
-	padding: 12px 15px;
-	margin: 8px 0;
-	width: 100%;
-  font-size: 18px;
+	padding: 1px 20px;
+	margin: 5px 0;
+	width: 70%;
+	font-size: 20px;
 }
 
-.overlay-right .h1{
-  margin-left: 50px;
+.overlay-right .h1 {
+	margin-left: 50px;
 }
 
-.overlay-right .p{
-  margin-left: 55px;
-  font-size: 18px;
+.overlay-right .p {
+	margin-left: 55px;
+	font-size: 18px;
 }
 
-.overlay-left .h1{
-  margin-left: -60px;
+.overlay-left .h1 {
+	margin-left: -60px;
 }
 
-.overlay-left .p{
-  margin-left: -65px;
-  font-size: 18px;
-  
+.overlay-left .p {
+	margin-left: -65px;
+	font-size: 18px;
+
 }
 
-.overlay-left .ghost{
-  margin-right: 105px;
+.overlay-left .ghost {
+	margin-right: 105px;
 }
 
-.overlay-left .ghost:hover{
-  cursor: pointer;
+.overlay-left .ghost:hover {
+	cursor: pointer;
+}
+
+
+/* New CSS  added by Divya*/
+.inputfield {
+	display: inline-block;
+}
+
+.inputfield .input-new {
+	background-color: #eee;
+	border: none;
+	padding: 1px 20px;
+	margin-right: 5px;
+	width: 32%;
+	font-size: 20px;
+	display: inline-block;
+}
+
+.type-box {
+	background-color: #eee;
+	border: none;
+	padding: 1px 20px;
+	margin-right: 5px;
+	width: 37%;
+	font-size: 20px;
+}
+
+.company-details .input-company {
+	background-color: #eee;
+	border: none;
+	padding: 1px 20px;
+	margin-right: 5px;
+	width: 37%;
+	font-size: 20px;
+	display: inline-block;
 }
