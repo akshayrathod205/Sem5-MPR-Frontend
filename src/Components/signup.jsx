@@ -7,6 +7,8 @@ import { useNavigate } from 'react-router-dom';
 
 const Content = () => {
     const [isSignUpActive, setIsSignUpActive] = useState(false);
+    const [selectedType, setSelectedType] = useState(''); // To store the selected type
+
 
     const togglePanel = () => {
         setIsSignUpActive((prevValue) => !prevValue);
@@ -15,17 +17,11 @@ const Content = () => {
     function handleClick() {
         navigate("/Details")
     }
-    const [selectedType, setSelectedType] = useState(''); // State to keep track of selected type
 
-    const handleChange=(e) =>{
-        const getValue = e.target.value
-        console.log(getValue)
-        if(getValue===2){
-            const showDetails ={
-                
-            }
-        }
+    function handleChange(e) {
+        setSelectedType(e.target.value);
     }
+
 
     return (
         <>
@@ -33,31 +29,39 @@ const Content = () => {
             <div className={`container ${isSignUpActive ? 'right-panel-active' : ''}`}>
                 <div className="form-container sign-up-container">
                     <form action="/">
-                        <h1 className='h1'>Create Account</h1>
-                        <input type="text" placeholder="Name" className='input' />
+                    <h1 className='h1'>Create Account</h1>
+                    <div className="flex-container">
+                    <div className='side1'>
+                        <input type="text" placeholder="Name" className='input'/>
                         <input type="email" placeholder="Email" className='input' />
                         <input type="password" placeholder="Password" className='input' />
                         <input type="tel" placeholder="Contact Number" pattern='[0-9]{4}[0-9]{3}[0-9]{3}' className='input' />
                         <textarea className='input' placeholder='Address' name="address" id="" cols="30" rows="2"></textarea>
-                        <div className='inputfield my-1'>
-                            <input className='input-new' type="pincode" placeholder='Pincode' />
-                            <input className='input-new' type="city" placeholder='City' />
-                        </div>
-                        <select className="type-box my-1" aria-label="Default select example" onChange={(e) => handleChange(e)}>
-                            <option disabled selected>Type</option>
-                            <option value="1">Induvidual</option>
-                            <option value="2">Company</option>
-                        </select>
-                        <div className="company-details my-2">
-                            <input type="company-name" className="input-company" placeholder='Company Name' />
-                            <input type="type" className="input-company" placeholder='Company type' />{/* To be changed*/}
-                        </div>
-                        <div className="company-details">
-                            <input type="gst_no" className="input-company" placeholder='Gst No.' />
-                            <input type="pan_no" className="input-company" placeholder='PAN No.' />
+                    </div>
+                    <div className='side2'>
+                        <input className='input' type="pincode" placeholder='Pincode' />
+                         <input className='input' type="city" placeholder='City' />
+                         <select className="type-box my-1" aria-label="Default select example" onChange={(e) => handleChange(e)}>
+                                    <option default>Type</option>
+                                    <option value="individual">Individual</option>
+                                    <option value="company">Company</option>
+                                </select>
+
+                                {selectedType === 'company' && (
+                                    <div className="company-details">
+                                        <input className='input' type="text" placeholder='Company Name' />
+                                        <input className='input' type="text" placeholder='Company Type' />
+                                        <input className='input' type="text" placeholder='Pan Number' />
+                                        <input className='input' type="text" placeholder='GST Number' />
+
+                                    </div>
+                                )}
+
+                        <button onClick={handleClick} className='sign-button my-2'>Sign Up</button>
                         </div>
 
-                        <button onClick={handleClick} className='button my-2'>Sign Up</button>
+                    </div>
+                   
                     </form>
                 </div>
                 <div className="form-container sign-in-container">
