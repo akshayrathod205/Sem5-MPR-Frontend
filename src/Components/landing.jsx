@@ -1,6 +1,7 @@
 import 'react-slideshow-image/dist/styles.css'
 import { Slide } from 'react-slideshow-image';
 import './landing.css'
+import {Link} from 'react-router-dom'
 
 const spanStyle = {
   padding: '20px',
@@ -54,7 +55,8 @@ export default function Landing(){
         <div className="about-info">
           <div className='info'>
             <p>We are India's premier manufacturers of Cold Forged Stainless Steel and Alloy Steel Fasteners such as Bolts, Nuts, Studs, Screws etc. Also various high Nickel and other exotic MOC's are manufactured with completely In-house state-of-the-art facilities. Our key point is Ex-Stock availability of more than 5000 types of fasteners and we are constantly developing new range of fasteners.</p>
-            <button>SEE PRODUCTS</button>
+            <Link to='/products'>
+              <button>SEE PRODUCTS</button></Link>
           </div>
           <div className="image">
             <img src='/washers.jpg'/>
