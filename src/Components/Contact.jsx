@@ -1,14 +1,31 @@
 import { useState } from "react";
 import { TextField, Button, Typography, Grid, Box } from "@mui/material";
+import axios from "axios";
 
 export default function Contact() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const change = (e, fieldName) => {
+    const { value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [fieldName]: value,
+    }));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //
+    axios
+      .post("http://localhost:3002/api/v1/contact/", formData)
+      .then((res) => {
+        console.log(res.data);
+        alert("Message Sent Successfully");
+      })
+      .catch((error) => console.log(error));
   };
 
   return (
@@ -41,7 +58,7 @@ export default function Contact() {
                     fullWidth
                     label="Name"
                     value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={(e) => change(e, "name")}
                     margin="normal"
                     required
                   />
@@ -49,7 +66,7 @@ export default function Contact() {
                     fullWidth
                     label="Email"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e) => change(e, "email")}
                     margin="normal"
                     required
                     type="email"
@@ -58,7 +75,7 @@ export default function Contact() {
                     fullWidth
                     label="Enquiry / Message"
                     value={message}
-                    onChange={(e) => setMessage(e.target.value)}
+                    onChange={(e) => change(e, "message")}
                     margin="normal"
                     required
                     multiline
