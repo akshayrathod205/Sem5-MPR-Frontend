@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Navbar from "./Components/navbar";
-import Landing from "./Components/landing";
+import Home from "./Components/landing";
 import Footer from "./Components/footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Signup from './Components/signup'
+import Product from './Components/products'
 
 function App() {
   return (
