@@ -1,91 +1,106 @@
 const Productdetail = [
   {
     id: 1,
-    Title: "Galaxy Tab S6 Lite 10.4-inch Android Tablet 128GB",
-    Cat:'Tablet',
-    Price: '$723',
-    Img: './img/tp1.jpg'
+    Title: "Hex Bolt (DIN 931)",
+    Cat:'Bolts',
+    Img: '/Hex-Head-Bolt_Transparent.png',
+    Img2: '/din-931-img2.png'
   },
   {
     id: 2,
-    Title: "Tracker with IP67 Waterproof Pedometer Smart Watch",
-    Cat:'Smart Watch',
-    Price: '$168',
-    Img: './img/tp2.jpg'
+    Title: "Hex Screw (DIN 933)",
+    Cat:'Screws',
+    Img: '/din-933(2).jpg',
+    Img2: '/din-933-img2.png'
   },
   {
     id: 3,
-    Title: "Cancelling Headphones Wireless",
-    Cat:'Headphone',
-    Price: '$40',
-    Img: './img/tp3.jpg'
+    Title: "Hex Bolts (BS 1083)",
+    Cat:'Bolts',
+    Img: '/bs-1083.png',
+    Img2: '/bs-1083-img2.png'
   },
   {
     id: 4,
-    Title: "Professional Camera 4K Digital Video Camera",
-    Cat:'Camera',
-    Price: '$1049',
-    Img: './img/tp4.jpg'
+    Title: "Hex Bolts (BS 1768)",
+    Cat:'Bolts',
+    Img: '/bs-1768.jpg',
+    Img2: '/bs-1768-img2.png'
   },
   {
     id: 5,
-    Title: "Mini Portable PD 22.5W Fast Charging Powerbank",
-    Cat:'Electronics',
-    Price: '$49',
-    Img: './img/tp5.jpg'
+    Title: "Carriage Bolts (DIN 603)",
+    Cat:'Bolts',
+    Img: '/carriage-bolt.jpeg',
+    Img2: '/carriage-bolt-img2.png'
   },
 
   {
     id: 6,
-    Title: "CPU Cooler 2 Heat Pipes 12mm 4 Pin PWM RGB for Intel",
-    Cat:'Electronics',
-    Price: '$156',
-    Img: './img/tp6.png'
+    Title: "Socket Head Cap Screw (DIN 912)",
+    Cat:'Screws',
+    Img: '/socket-head-cap.jpg',
+    Img2: '/socket-head-cap-img2.png'
   },
 
   {
     id: 7,
-    Title: "Playstation 4 2TB Slime Gaming Console",
-    Cat:'Gaming',
-    Price: '$2098',
-    Img: './img/tp7.jpg'
+    Title: "Studs (DIN 975)",
+    Cat:'Studs',
+    Img: '/STUDS.png',
+    Img2: '/studs-img2.png'
   },
 
   {
     id: 8,
-    Title: "MIni Portable Mobile Phone Powebank for Iphone",
-    Cat:'Electronics',
-    Price: '$386',
-    Img: './img/tp8.jpg'
+    Title: "Hex Nuts (DIN 934)",
+    Cat:'Nuts',
+    Img: '/din-934.png',
+    Img2: '/din-934-img2.png'
   },
   {
     id: 9,
-    Title: "Microsoft Surface Pro 8-13' TouchScreen",
-    Cat:'Tablet',
-    Price: '$386',
-    Img: './img/p9.jpg'
+    Title: "Lock Nut (DIN 439)",
+    Cat:'Nuts',
+    Img: '/lock-nut.png',
+    Img2: '/lock-nut-img2.png'
   },
   {
     id: 10,
-    Title: "MIni Portable Mobile Phone Powebank for Iphone",
-    Cat:'Electronics',
-    Price: '$386',
-    Img: './img/p10.jpg'
+    Title: "Hex and Lock Nut",
+    Cat:'Nuts',
+    Img: '/1083-Hex-Nut.jpg',
+    Img2: '/hex-lock-nut-img2.png'
   },
   {
     id: 11,
-    Title: "Echo Show 5 (2nd Gen) Adjustable Stand | Charcoal",
-    Cat:'Electronics',
-    Price: '$198',
-    Img: './img/p11.jpg'
+    Title: "Square Nut",
+    Cat:'Nuts',
+    Img: '/square-nut.png',
+    Img2: '/square-nut-img2.png'
   },
   {
     id: 12,
-    Title: "Echo Dot smart speaker",
-    Cat:'Electronics',
-    Price: '$793',
-    Img: './img/p12.jpg'
+    Title: "CSK Socket",
+    Cat:'Sockets',
+    Img: '/csk-socket.png',
+    Img2: '/csk-socket-img2.png'
+  },
+  {
+    id: 13,
+    Title: "Hex and Lock Nut (BS 1768)",
+    Cat:'Nuts',
+    Img: '/hex-lock-nut-1768.jpg',
+    Img2: '/hex-nut-lock-bs1768-img2.png'
+  },
+  {
+    id: 14,
+    Title: "U Bolt",
+    Cat:'Bolts',
+    Img: '/u-bolt.png',
+    Img2: '/u-bolt-img2.png'
   }
+
 ]
 
 export default Productdetail
