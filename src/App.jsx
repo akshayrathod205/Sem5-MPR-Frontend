@@ -10,6 +10,7 @@ import Signup from "./Components/signup";
 import Product from "./Components/products";
 import Singleproduct from "./Components/singleproduct";
 import Contact from "./Components/Contact";
+import About from "./Components/About";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/products" element={<Product />} />
         <Route path="/products/:id" element={<Singleproduct />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
       </Routes>
       <Footer />
     </BrowserRouter>
