@@ -11,7 +11,7 @@ export default function Footer(){
     <div className="footer">
       <div className="company">
         <h4>COMPANY</h4>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam, illum! Suscipit obcaecati a tempora veritatis.</p>
+        <p>We are India's premier manufacturers of Cold Forged Stainless Steel and Alloy Steel Fasteners such as Bolts, Nuts, Studs, Screws etc. Also various high Nickel and other exotic MOC's are manufactured with completely In-house state-of-the-art facilities</p>
         <span><BsFillArrowRightCircleFill/></span>
         <h5>FIT RIGHT © 2015</h5>
       </div>
