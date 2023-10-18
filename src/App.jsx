@@ -13,6 +13,7 @@ import Contact from "./Components/Contact";
 import Cart from "./Components/cart";
 import Userdash from "./Components/userdash";
 import AddProduct from "./Components/AddProduct";
+import Cart from "./Components/cart";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/userdash" element={<Userdash />} />
         <Route path="/addproduct" element={<AddProduct />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
       <Footer />
     </BrowserRouter>
