@@ -21,22 +21,24 @@ export default function Cart() {
     }
   };
 
-  const filteredProducts = selectedCategory
-    ? Productdetail.filter((item) => item.name === selectedCategory)
-    : Productdetail;
-
   useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      alert("Please login first");
+      navigate("/login");
+    }
+    const headers = { Authorization: `Bearer ${token}` };
     console.log(Productdetail);
     axios
-      .get("http://localhost:3002/api/v1/cart/")
+      .get("http://localhost:3002/api/v1/cart/", { headers })
       .then((res) => {
-        console.log(res.data);
-        setProductdetail(res.data.cart);
+        console.log(res.data.products);
+        setProductdetail(res.data.products);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, [Productdetail]);
+  }, []);
 
   return (
     <>
@@ -53,21 +55,17 @@ export default function Cart() {
           </Link>
         </div>
 
-        {filteredProducts.map((item) => {
+        <div className="cart-table">
+          <h3>Product Image</h3>
+          <h3>Product Name</h3>
+          <h3>Quantity (In Cartons)</h3>
+        </div>
+        {Productdetail.map((item) => {
           return (
             <>
               <div className="cart-table">
-                <h3>Product Image</h3>
-                <h3>Product Name</h3>
-                <h3>Quantity (In Cartons)</h3>
-              </div>
-
-              <div className="cart-table">
-                <img
-                  src={item.productImage}
-                  className="cart-image"
-                ></img>
-                <h3>{Productdetail.name}</h3>
+                <img src={item.productImage} className="cart-image"></img>
+                <h3>{item.name}</h3>
                 <div className="quantity-adjuster">
                   <button onClick={onDecrease} disabled={quantity <= 1}>
                     -

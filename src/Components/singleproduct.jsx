@@ -6,11 +6,13 @@ import "./singleproduct.css";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Singleproduct = () => {
+  const navigate = useNavigate();
   const productId = useParams();
   // const selectedProduct = Productdetail.find(product => product.id == productId.id);
-  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [selectedProduct, setSelectedProduct] = useState();
 
   useEffect(() => {
     axios
@@ -23,6 +25,35 @@ const Singleproduct = () => {
         console.log(err);
       });
   }, []);
+
+  const handleSubmit = () => {
+    console.log(selectedProduct);
+    const productId = selectedProduct._id;
+    const name = selectedProduct.name;
+    const productImage = selectedProduct.productImage;
+    const type = selectedProduct.type;
+    const token = localStorage.getItem("token");
+    if (!token) {
+      alert("Please login first");
+      navigate("/login");
+    }
+    const headers = { Authorization: `Bearer ${token}` };
+    axios
+      .post(
+        "http://localhost:3002/api/v1/cart/",
+        { productId, name, productImage, type },
+        {
+          headers,
+        }
+      )
+      .then((res) => {
+        console.log(res.data);
+        alert("Product added to cart");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   const [isSliderOpen, setIsSliderOpen] = useState(false);
 
@@ -45,9 +76,9 @@ const Singleproduct = () => {
         <div className="heading">
           <h2>{selectedProduct.type}</h2>
           <p>{selectedProduct.type}</p>
-          <Link to="/cart">
-            <button className="btn">ADD TO CART</button>
-          </Link>
+          <button className="btn" onClick={handleSubmit}>
+            ADD TO CART
+          </button>
         </div>
       </div>
       <h2 className="size">Size Chart</h2>
