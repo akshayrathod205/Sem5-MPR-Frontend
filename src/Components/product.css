@@ -43,13 +43,15 @@
 .cart ul{
   display: flex; 
   justify-content: space-between;
-  padding-top:20px;
   padding-right:30px;
   padding-bottom: 30px;
+  padding-top: 0px;
 }
 
 .cart ul li{
   font-size:30px;
+  padding-top: 19px;
+  padding-right: 60px
 }
 
 .products{
