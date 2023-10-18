@@ -10,8 +10,9 @@ import Signup from "./Components/signup";
 import Product from "./Components/products";
 import Singleproduct from "./Components/singleproduct";
 import Contact from "./Components/Contact";
-import Cart from './Components/cart'
-import Userdash from './Components/userdash'
+import Cart from "./Components/cart";
+import Userdash from "./Components/userdash";
+import AddProduct from "./Components/AddProduct";
 
 function App() {
   return (
@@ -23,8 +24,9 @@ function App() {
         <Route path="/products" element={<Product />} />
         <Route path="/products/:id" element={<Singleproduct />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/cart" element={<Cart />}/> 
-        <Route path="/userdash" element={<Userdash />}/> 
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/userdash" element={<Userdash />} />
+        <Route path="/addproduct" element={<AddProduct />} />
       </Routes>
       <Footer />
     </BrowserRouter>

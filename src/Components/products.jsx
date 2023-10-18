@@ -25,12 +25,16 @@ export default function Products() {
       .get("http://localhost:3002/api/v1/products/")
       .then((res) => {
         console.log(res.data);
-        setProductdetail(res.data);
+        setProductdetail(res.data.products);
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
+
+  useEffect(() => {
+    console.log(Productdetail);
+  }, [Productdetail]);
 
   return (
     <>
@@ -57,15 +61,15 @@ export default function Products() {
             <div className="content">
               {filteredProducts.map((curElm) => {
                 return (
-                  <div className="box" key={curElm.id}>
+                  <div className="box" key={curElm._id}>
                     <div className="img_box">
-                      <img src={curElm.Img} alt={curElm.Title} />
+                      <img src={curElm.productImage} alt={curElm.name} />
                       <div className="icon">
                         <li>
                           <AiOutlineShoppingCart />
                         </li>
                         <li>
-                          <Link to={`/products/${curElm.id}`}>
+                          <Link to={`/products/${curElm._id}`}>
                             <BsEye />
                           </Link>
                         </li>
@@ -73,7 +77,7 @@ export default function Products() {
                     </div>
                     <div className="detail">
                       <p>{curElm.Cat}</p>
-                      <h3>{curElm.Title}</h3>
+                      <h3>{curElm.name}</h3>
                     </div>
                   </div>
                 );
