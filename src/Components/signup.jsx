@@ -92,7 +92,7 @@ function Signup() {
                 />
                 <input
                   type="text"
-                  placeholder="First Name"
+                  placeholder="Last Name"
                   className="input"
                   value={formData.lastName}
                   onChange={(e) => change(e, "lastName")}

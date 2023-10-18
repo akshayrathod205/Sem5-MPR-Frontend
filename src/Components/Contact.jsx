@@ -57,7 +57,7 @@ export default function Contact() {
                   <TextField
                     fullWidth
                     label="Name"
-                    value={name}
+                    value={formData.name}
                     onChange={(e) => change(e, "name")}
                     margin="normal"
                     required
@@ -65,7 +65,7 @@ export default function Contact() {
                   <TextField
                     fullWidth
                     label="Email"
-                    value={email}
+                    value={formData.email}
                     onChange={(e) => change(e, "email")}
                     margin="normal"
                     required
@@ -74,7 +74,7 @@ export default function Contact() {
                   <TextField
                     fullWidth
                     label="Enquiry / Message"
-                    value={message}
+                    value={formData.message}
                     onChange={(e) => change(e, "message")}
                     margin="normal"
                     required
