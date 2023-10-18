@@ -6,9 +6,11 @@ import { BsEye } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import "./product.css";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function Products() {
+  const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [Productdetail, setProductdetail] = useState([]);
 
@@ -17,8 +19,12 @@ export default function Products() {
   };
 
   const filteredProducts = selectedCategory
-    ? Productdetail.filter((item) => item.Cat === selectedCategory)
+    ? Productdetail.filter((item) => item.type === selectedCategory)
     : Productdetail;
+
+  const change = () => {
+    navigate("/cart");
+  };
 
   useEffect(() => {
     axios
@@ -47,7 +53,7 @@ export default function Products() {
             <li onClick={() => handleCategoryClick("Screws")}>Screws</li>
             <li onClick={() => handleCategoryClick("Sockets")}>Sockets</li>
           </ul>
-          <div className="cart">
+          <div className="cart" onClick={change}>
             <ul>
               <li>
                 <AiOutlineShoppingCart />
@@ -76,7 +82,7 @@ export default function Products() {
                       </div>
                     </div>
                     <div className="detail">
-                      <p>{curElm.Cat}</p>
+                      <p>{curElm.type}</p>
                       <h3>{curElm.name}</h3>
                     </div>
                   </div>

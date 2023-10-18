@@ -13,7 +13,6 @@ import Contact from "./Components/Contact";
 import Cart from "./Components/cart";
 import Userdash from "./Components/userdash";
 import AddProduct from "./Components/AddProduct";
-import Cart from "./Components/cart";
 
 function App() {
   return (
