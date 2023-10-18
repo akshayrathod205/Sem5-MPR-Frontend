@@ -11,6 +11,7 @@ import Product from "./Components/products";
 import Singleproduct from "./Components/singleproduct";
 import Contact from "./Components/Contact";
 import Cart from './Components/cart'
+import Userdash from './Components/userdash'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/products/:id" element={<Singleproduct />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/cart" element={<Cart />}/> 
+        <Route path="/userdash" element={<Userdash />}/> 
       </Routes>
       <Footer />
     </BrowserRouter>
