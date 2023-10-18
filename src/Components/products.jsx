@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import Productdetail from "./productdetail";
-import { AiOutlineHeart } from "react-icons/ai";
-import { AiOutlineShoppingCart } from "react-icons/ai";
-import { BsEye } from "react-icons/bs";
-import { Link } from "react-router-dom";
-import "./product.css";
+import React, { useState } from 'react';
+import './product.css';
+import Productdetail from './productdetail';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { BsEye } from 'react-icons/bs';
+import {Link} from 'react-router-dom'
 
 export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -17,7 +16,7 @@ export default function Products() {
     ? Productdetail.filter((item) => item.Cat === selectedCategory)
     : Productdetail;
 
-  //popup
+   
 
   return (
     <>
@@ -25,16 +24,18 @@ export default function Products() {
         <div className="nav">
           <ul>
             <li onClick={() => handleCategoryClick(null)}>All</li>
-            <li onClick={() => handleCategoryClick("Bolts")}>Bolts</li>
-            <li onClick={() => handleCategoryClick("Nuts")}>Nuts</li>
-            <li onClick={() => handleCategoryClick("Screws")}>Screws</li>
-            <li onClick={() => handleCategoryClick("Sockets")}>Sockets</li>
+            <li onClick={() => handleCategoryClick('Bolts')}>Bolts</li>
+            <li onClick={() => handleCategoryClick('Nuts')}>Nuts</li>
+            <li onClick={() => handleCategoryClick('Screws')}>Screws</li>
+            <li onClick={() => handleCategoryClick('Sockets')}>Sockets</li>
           </ul>
           <div className="cart">
             <ul>
+              <Link to='/cart'>
               <li>
-                <AiOutlineShoppingCart />
+                <AiOutlineShoppingCart  />
               </li>
+              </Link>
             </ul>
           </div>
         </div>
@@ -48,13 +49,15 @@ export default function Products() {
                     <div className="img_box">
                       <img src={curElm.Img} alt={curElm.Title} />
                       <div className="icon">
+                        <Link to='/cart'>
                         <li>
                           <AiOutlineShoppingCart />
                         </li>
+                        </Link>
                         <li>
-                          <Link to={`/products/${curElm.id}`}>
-                            <BsEye />
-                          </Link>
+                        <Link to={`/products/${curElm.id}`}>
+                          <BsEye />
+                        </Link>
                         </li>
                       </div>
                     </div>
