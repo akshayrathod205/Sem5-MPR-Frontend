@@ -66,7 +66,7 @@ function Signup() {
               "Authorization"
             ] = `Bearer ${storedToken}`;
             dispatch(setLogin(response.data));
-            navigate("/products");
+            navigate("/");
           }
         }
       })

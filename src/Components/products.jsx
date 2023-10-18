@@ -21,8 +21,6 @@ export default function Products() {
     : Productdetail;
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    const headers = { Authorization: `Bearer ${token}` };
     axios
       .get("http://localhost:3002/api/v1/products/")
       .then((res) => {
