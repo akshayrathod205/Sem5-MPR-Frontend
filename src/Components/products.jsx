@@ -4,7 +4,7 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BsEye } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import "./products.css";
+import "./product.css";
 
 export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState(null);
