@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./signup.css";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setLogin } from "../state/appStates";
 import axios from "axios";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faFacebookF, faGooglePlusG, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
@@ -8,6 +10,8 @@ import axios from "axios";
 function Signup() {
   const [isSignUpActive, setIsSignUpActive] = useState(false);
   const [selectedType, setSelectedType] = useState(""); // To store the selected type
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -32,7 +36,6 @@ function Signup() {
   const togglePanel = () => {
     setIsSignUpActive((prevValue) => !prevValue);
   };
-  const navigate = useNavigate();
 
   const signupSubmit = (e) => {
     e.preventDefault();
@@ -52,10 +55,20 @@ function Signup() {
     console.log(loginData);
     axios
       .post("http://localhost:3002/api/v1/auth/consumer/login", loginData)
-      .then((res) => {
-        console.log(res.data);
-        alert("Login Successful");
-        navigate("/products");
+      .then((response) => {
+        if (response.status === 200) {
+          console.log(response.data);
+          const token = response.data.token;
+          localStorage.setItem("token", token);
+          const storedToken = localStorage.getItem("token");
+          if (storedToken) {
+            axios.defaults.headers.common[
+              "Authorization"
+            ] = `Bearer ${storedToken}`;
+            dispatch(setLogin(response.data));
+            navigate("/products");
+          }
+        }
       })
       .catch((error) => console.log(error));
   };

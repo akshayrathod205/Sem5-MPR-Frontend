@@ -18,9 +18,10 @@ import Switch from "@mui/material/Switch";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { setLogout } from "../state/appStates";
 
 const pages = ["Home", "About Us", "Products", "Contact Us"];
-const settings = ["Admin Login", "User login"];
+const settings = ["Profile", "Logout"];
 
 const Navbar = (props) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -29,10 +30,12 @@ const Navbar = (props) => {
   const dispatch = useDispatch();
 
   const handleClick = (setting) => {
-    if (setting === "Admin Login") {
-      navigate("/admin");
-    } else if (setting === "User login") {
-      navigate("/user");
+    if (setting === "Logout") {
+      localStorage.removeItem("token");
+      dispatch(setLogout());
+      navigate("/");
+    } else if (setting === "Profile") {
+      navigate("/profile");
     }
   };
 
