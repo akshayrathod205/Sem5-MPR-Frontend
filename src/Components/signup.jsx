@@ -62,12 +62,24 @@ function Signup() {
 
   function handleChange(e) {
     setSelectedType(e.target.value);
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      userType: e.target.value,
+    }));
   }
 
   const change = (e, fieldName) => {
     const { value } = e.target;
     setFormData((prevFormData) => ({
       ...prevFormData,
+      [fieldName]: value,
+    }));
+  };
+
+  const loginChange = (e, fieldName) => {
+    const { value } = e.target;
+    setLoginData((prevLoginData) => ({
+      ...prevLoginData,
       [fieldName]: value,
     }));
   };
@@ -204,14 +216,14 @@ function Signup() {
               placeholder="Email"
               className="input"
               value={loginData.email}
-              onChange={(e) => change(e, email)}
+              onChange={(e) => loginChange(e, "email")}
             />
             <input
               type="password"
               placeholder="Password"
               className="input"
               value={loginData.password}
-              onChange={(e) => change(e, password)}
+              onChange={(e) => loginChange(e, "password")}
             />
             <a href="/" className="a">
               Forgot your password?
