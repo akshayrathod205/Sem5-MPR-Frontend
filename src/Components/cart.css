@@ -3,6 +3,11 @@
   padding: 20px;
 }
 
+.head{
+  display: flex;
+  gap: -3rem;
+}
+
 .cart-icon{
   font-size: 35px;
   padding-top: 15px;
@@ -28,7 +33,7 @@
 }
 
 .cart-table{
-  padding-top: 30px;
+  padding-top: 50px;
   padding-left: 20px;
   display: flex;
   justify-content: space-around;
@@ -62,6 +67,7 @@
   justify-content: center;
   align-items: center;
   background-color: white;
+  margin-top: -5px;
 }
 
 .quotation:hover{

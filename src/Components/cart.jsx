@@ -23,7 +23,7 @@ export default function Cart(){
     <>
     <div className="cart-container">
       <div className="top">
-      <div className="header">
+      <div className="head">
         <div className="cart-icon">
         <AiOutlineShoppingCart/>
         </div>
