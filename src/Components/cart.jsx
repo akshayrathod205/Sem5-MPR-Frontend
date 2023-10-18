@@ -40,6 +40,24 @@ export default function Cart() {
       });
   }, []);
 
+  const handleSubmit = () => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      alert("Please login first");
+      navigate("/login");
+    }
+    const headers = { Authorization: `Bearer ${token}` };
+    axios
+      .post("http://localhost:3002/api/v1/orders/", { headers })
+      .then((res) => {
+        console.log(res);
+        alert("Quotation sent");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <>
       <div className="cart-container">
@@ -99,7 +117,9 @@ export default function Cart() {
           </div>
         </div> */}
         <div className="quotation">
-          <button className="btn">Get Quotation</button>
+          <button className="btn" onClick={handleSubmit}>
+            Get Quotation
+          </button>
         </div>
       </div>
     </>
