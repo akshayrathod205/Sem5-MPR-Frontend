@@ -9,6 +9,7 @@ import { Route, Routes } from "react-router-dom";
 import Signup from "./Components/signup";
 import Product from "./Components/products";
 import Singleproduct from "./Components/singleproduct";
+import Contact from "./Components/Contact";
 
 function App() {
   return (
@@ -16,9 +17,10 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/log_in" element={<Signup />} />
+        <Route path="/login" element={<Signup />} />
         <Route path="/products" element={<Product />} />
         <Route path="/products/:id" element={<Singleproduct />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </BrowserRouter>
