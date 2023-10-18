@@ -180,7 +180,7 @@ const Navbar = (props) => {
                 horizontal: "right",
               }}
               open={Boolean(anchorElUser)}
-              onClose={handleCloseNavMenu} // Close the menu without redirecting if no option is selected
+              onClose={handleCloseUserMenu} // Close the menu without redirecting if no option is selected
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={() => handleClick(setting)}>
