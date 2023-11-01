@@ -48,10 +48,11 @@ export default function Products() {
         <div className="nav">
           <ul>
             <li onClick={() => handleCategoryClick(null)}>All</li>
-            <li onClick={() => handleCategoryClick("Bolts")}>Bolts</li>
+            <li onClick={() => handleCategoryClick("Hex Bolt")}>Hex Bolts</li>
             <li onClick={() => handleCategoryClick("Nuts")}>Nuts</li>
             <li onClick={() => handleCategoryClick("Screws")}>Screws</li>
             <li onClick={() => handleCategoryClick("Sockets")}>Sockets</li>
+            <li onClick={() => handleCategoryClick("U Bolt")}>U Bolt</li>
           </ul>
           <div className="cart" onClick={change}>
             <ul>

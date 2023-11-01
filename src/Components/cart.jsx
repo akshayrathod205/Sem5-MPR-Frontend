@@ -73,6 +73,8 @@ export default function Cart() {
           </Link>
         </div>
 
+        <p className="note">Note: 1 carton weighs 22kg. Fasteners are solely sold based on number of cartons and not individual items. </p>
+
         <div className="cart-table">
           <h3>Product Image</h3>
           <h3>Product Name</h3>
@@ -117,7 +119,7 @@ export default function Cart() {
           </div>
         </div> */}
         <div className="quotation">
-          <button className="btn" onClick={handleSubmit}>
+          <button className="cart-btn" onClick={handleSubmit}>
             Get Quotation
           </button>
         </div>

@@ -47,7 +47,7 @@ export default function Contact() {
                 <Grid item xs={12} md={6}>
                   <Box sx={{ display: "flex", justifyContent: "center" }}>
                     <img
-                      src="https://cdn.pixabay.com/photo/2023/04/24/03/16/camping-7947056__340.jpg"
+                     src='/FITRIGHT.png'
                       alt="Contact"
                       style={{ maxWidth: "100%" }}
                     />

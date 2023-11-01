@@ -1,47 +1,51 @@
 // import { StarBorder } from '@mui/icons-material';
-import { Button, Card, Container, Grid, Paper, Typography } from '@mui/material'
+import { Button, Card, CardActionArea, CardContent, CardMedia, Container, Grid, Paper, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import about_logo from '../assets/about-image.jpg'
 import './about.css'
 import HistoryItem from './HistoryItem';
 import { EmojiEmotionsSharp, Group, SchoolRounded, TravelExplore, Widgets } from '@mui/icons-material';
 import frlogo from '../assets/fr.png'
-
+import coldf from '../../public/cold_forged_manufacturing.jpg'
+import advmtech from '../../public/advanced_machine_tech.jpg'
+import fastprod from '../../public/fast_production_precision.jpg'
+import supfinish from '../../public/Superior_Surface_Finish.jpg'
+import shs from '../../public/Shorter_Lead_Time_&_Strength.jpg'
 
 function About() {
-  let articles = [
-    {
-      "url": "../assets/cold_forged_tech.jpg",
-      "title": "Cold Forged Manufacturing",
-      "description": "Speed, strength, and improved properties through the Cold Forged method."
-    },
-    {
-      "url": "",
-      "title": "Advanced Machine Tech",
-      "description": "Cutting-edge machinery for efficient and precise fastener manufacturing."
-    },
-    {
-      "url": "",
-      "title": "Fast Production & Precision",
-      "description": "Efficient production with precise accuracy and unbroken grain flow."
-    },
-    {
-      "url": "",
-      "title": "Superior Surface Finish",
-      "description": "Delivers top-quality surface finish using modern tool-room facilities."
-    },
-    {
-      "url": "",
-      "title": "Shorter Lead Time & Strength",
-      "description": "Quick turnaround with increased strength in manufactured fasteners."
-    }
-  ];
+  // let articles = [
+  //   {
+  //     "url": "../assets/cold_forged_tech.jpg",
+  //     "title": "Cold Forged Manufacturing",
+  //     "description": "Speed, strength, and improved properties through the Cold Forged method."
+  //   },
+  //   {
+  //     "url": "",
+  //     "title": "Advanced Machine Tech",
+  //     "description": "Cutting-edge machinery for efficient and precise fastener manufacturing."
+  //   },
+  //   {
+  //     "url": "",
+  //     "title": "Fast Production & Precision",
+  //     "description": "Efficient production with precise accuracy and unbroken grain flow."
+  //   },
+  //   {
+  //     "url": "",
+  //     "title": "Superior Surface Finish",
+  //     "description": "Delivers top-quality surface finish using modern tool-room facilities."
+  //   },
+  //   {
+  //     "url": "",
+  //     "title": "Shorter Lead Time & Strength",
+  //     "description": "Quick turnaround with increased strength in manufactured fasteners."
+  //   }
+  // ];
   let handleOpenpdf = () => {
     console.log('clicked')
   }
 
 
-  const [articlestate, setarticlestate] = useState(articles);
+  // const [articlestate, setarticlestate] = useState(articles);
   return (
     <Container fixed sx={{ minWidth: '99vw', minHeight: '90vh' }}>
       <Grid container spacing={2} mt={2} >
@@ -63,13 +67,45 @@ function About() {
           <Typography variant='h3' sx={{ textAlign: 'center' }}>Manufacturing Process</Typography>
         </Grid>
         <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center', alignContent: 'center' }}>
-          {articlestate.map((element, index) => {
-            return (
-              <Card sx={{ minWidth: '15vw', marginRight: '2vw' }}>
-                <HistoryItem key={index} title={element.title} description={element.description} imageUrl={element.url} />
-              </Card>
-            )
-          })}
+          {/* Hardcoded data for 5 cards */}
+          <Card sx={{ minWidth: '15vw', marginRight: '2vw' }}>
+            <HistoryItem
+              title="Cold Forged Manufacturing"
+              description="Speed, strength, and improved properties through the Cold Forged method."
+              imageUrl={coldf}
+            />
+          </Card>
+
+          <Card sx={{ minWidth: '15vw', marginRight: '2vw' }}>
+            <HistoryItem
+              title="Advanced Machine Tech"
+              description="Cutting-edge machinery for efficient and precise fastener manufacturing."
+              imageUrl={advmtech}
+            />
+          </Card>
+          <Card sx={{ minWidth: '15vw', marginRight: '2vw' }}>
+            <HistoryItem
+              title="Fast Production & Precision"
+              description="Efficient production with precise accuracy and unbroken grain flow."
+              imageUrl={fastprod}
+            />
+          </Card>
+          <Card sx={{ minWidth: '15vw', marginRight: '2vw' }}>
+            <HistoryItem
+              title="Superior Surface Finish"
+              description="Delivers top-quality surface finish using modern tool-room facilities."
+              imageUrl={supfinish}
+            />
+          </Card>
+          <Card sx={{ minWidth: '15vw', marginRight: '2vw' }}>
+            <HistoryItem
+              title="Shorter Lead Time & Strength"
+              description="Quick turnaround with increased strength in manufactured fasteners."
+              imageUrl={shs}
+            />
+          </Card>
+
+          {/* Repeat this pattern for the other 3 cards with their respective data */}
         </Grid>
       </Grid>
       <Grid container spacing={2} mt={2}>
@@ -80,7 +116,7 @@ function About() {
               We continuously improve our products and services to satisfy the need of our customers with timely delivery and zero defects. Providing products according to customers' specifications at reasonable price and ex-stock of wide range of fasteners develops a strong relationship with the customers and we are proud to say that the relationships have become healthier over the years. This is achieved with constant innovation, the best and latest technology along with the support of a very dedicated and skilled workforce
             </Typography>
           </Paper>
-          <Button style={{display:'flex',justifyContent:'center',alignContent:'center'}}>Quality Certification</Button>
+          <Button style={{ display: 'flex', justifyContent: 'center', alignContent: 'center' }}>Quality Certification</Button>
         </Grid>
       </Grid>
       <Grid container spacing={2}>
@@ -125,7 +161,7 @@ function About() {
           <Typography variant='h6'>trained and certified</Typography>
         </Grid>
       </Grid>
-    </Container>
+    </Container >
   )
 }
 export default About

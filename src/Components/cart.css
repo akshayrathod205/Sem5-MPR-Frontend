@@ -73,3 +73,24 @@
 .quotation:hover{
   cursor: pointer;
 }
+
+.cart-btn{
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  color: white;
+  background-color: #162D6Fff;
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+}
+
+.note{
+  padding: 10px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    border-bottom: 0.5px solid rgb(209, 206, 206);
+    margin-top: 60px;
+}
+

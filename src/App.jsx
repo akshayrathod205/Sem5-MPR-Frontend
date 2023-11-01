@@ -13,6 +13,10 @@ import Contact from "./Components/Contact";
 import Cart from "./Components/cart";
 import Userdash from "./Components/userdash";
 import AddProduct from "./Components/AddProduct";
+import AdminDash from "./Components/AdminDash";
+import Dashboard from "./Components/Dashboard";
+import About from "./Components/About";
+import Singleorder from "./Components/singleorder";
 
 function App() {
   return (
@@ -28,6 +32,10 @@ function App() {
         <Route path="/userdash" element={<Userdash />} />
         <Route path="/addproduct" element={<AddProduct />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/admin/dashboard" element={<AdminDash />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/singleorder/:id" element={<Singleorder />} />
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -105,7 +105,10 @@ function Signup() {
       >
         <div className="form-container sign-up-container">
           <form onSubmit={(e) => signupSubmit(e)}>
+            <div className="header">
+              <button className="ghost" onClick={togglePanel}>Back</button>
             <h1 className="h1">Create Account</h1>
+            </div>
             <div className="flex-container">
               <div className="side1">
                 <input

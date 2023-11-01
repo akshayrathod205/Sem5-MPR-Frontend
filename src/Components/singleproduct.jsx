@@ -76,7 +76,7 @@ const Singleproduct = () => {
         <div className="heading">
           <h2>{selectedProduct.type}</h2>
           <p>{selectedProduct.type}</p>
-          <button className="btn" onClick={handleSubmit}>
+          <button className="cart-btn" onClick={handleSubmit}>
             ADD TO CART
           </button>
         </div>
@@ -84,7 +84,10 @@ const Singleproduct = () => {
       <h2 className="size">Size Chart</h2>
       <p className="para">
         Note: Fasteners are also available as per custom dimensions. Please
-        contact us with your requirements.
+        <Link to="/contact" style={{ textDecoration: "none" }}>
+          <span style={{ padding: "5px" }}>contact</span>
+        </Link>{" "}
+        us with your requirements.
       </p>
       <div className="image-section">
         <img
