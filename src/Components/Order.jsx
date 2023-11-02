@@ -69,7 +69,6 @@ export default function Order() {
     navigate(`/singleorder/${orderId}`);
   };
 
-
   const handleChangeRowsPerPage = (event) => {
     setRowsPerPage(+event.target.value);
     setPage(0);
@@ -86,15 +85,17 @@ export default function Order() {
     axios
       .get("http://localhost:3002/api/v1/orders/", { headers })
       .then((res) => {
-        console.log(res.data.orders);
         setProductdetail(res.data.orders);
+        console.log(res.data.orders);
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
 
-  
+  if (!Productdetail) {
+    return <h1>Loading...</h1>;
+  }
 
   return (
     <Paper sx={{ width: "100%" }}>
@@ -129,11 +130,38 @@ export default function Order() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {Productdetail.map((order, index) => {
+            {/* {Productdetail.map((order, index) => {
+              const orderItems = order.orderItems[index];
               return (
-                
-                <TableRow key={order._id} onClick={() => handleRowClick(order._id)}> 
-                  <TableCell>{order.orderItems[index].name}</TableCell>
+                <>
+                  <TableRow
+                    key={order._id}
+                    onClick={() => handleRowClick(order._id)}
+                  >
+                    <TableCell>{orderItems.name}</TableCell>
+                    <TableCell>
+                      {new Date(order.createdAt).toLocaleDateString()}
+                    </TableCell>
+                    <TableCell sx={{ textAlign: "right" }}>
+                      {order.userId}
+                    </TableCell>
+                    <TableCell sx={{ textAlign: "right" }}>
+                      {orderItems.size}
+                    </TableCell>
+                    <TableCell sx={{ textAlign: "right" }}>
+                      {orderItems.quantity}
+                    </TableCell>
+                  </TableRow>
+                </>
+              );
+            })} */}
+            {Productdetail.map((order) => {
+              return order.orderItems.map((orderItem) => (
+                <TableRow
+                  key={order._id}
+                  onClick={() => handleRowClick(order._id)}
+                >
+                  <TableCell>{orderItem.name}</TableCell>
                   <TableCell>
                     {new Date(order.createdAt).toLocaleDateString()}
                   </TableCell>
@@ -141,13 +169,13 @@ export default function Order() {
                     {order.userId}
                   </TableCell>
                   <TableCell sx={{ textAlign: "right" }}>
-                    {order.orderItems[index].size}
+                    {orderItem.size}
                   </TableCell>
                   <TableCell sx={{ textAlign: "right" }}>
-                    {order.orderItems[index].quantity}
+                    {orderItem.quantity}
                   </TableCell>
                 </TableRow>
-              );
+              ));
             })}
           </TableBody>
 

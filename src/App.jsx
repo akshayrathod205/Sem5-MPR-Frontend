@@ -17,6 +17,9 @@ import AdminDash from "./Components/AdminDash";
 import Dashboard from "./Components/Dashboard";
 import About from "./Components/About";
 import Singleorder from "./Components/singleorder";
+import Payment from "./Components/payment";
+import Orderdetails from "./Components/Orderdetails";
+import Admin from "./Components/Admin";
 
 function App() {
   return (
@@ -36,6 +39,9 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/about" element={<About />} />
         <Route path="/singleorder/:id" element={<Singleorder />} />
+        <Route path="/payment/:id" element={<Payment />} />
+        <Route path="/orderdetails/:id" element={<Orderdetails />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
       <Footer />
     </BrowserRouter>
