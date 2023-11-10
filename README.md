@@ -24,7 +24,7 @@ Preview of the project:
 4. Since price of products depends on the current price of raw material the customer needs to send a request to get quotation. 
 ![order](https://github.com/akshayrathod205/Sem5-MPR-Frontend/assets/103347688/f942267c-9705-48a5-9bfa-9ab0c5ee46fa)
 
-5. Admin Dashboard - The admin can view quotation requests and enter the prize and send it to the customers. 
+5. Admin Dashboard - The admin can view quotation requests and enter the price and send it to the customers. 
 
 ![admin-dashboard](https://github.com/akshayrathod205/Sem5-MPR-Frontend/assets/103347688/f05c5846-4535-4b14-85c9-9e1670c1075e)
 ![admin-dash](https://github.com/akshayrathod205/Sem5-MPR-Frontend/assets/103347688/294a69ca-5bc1-4618-b9c6-688149d577ce)
